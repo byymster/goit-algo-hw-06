@@ -110,6 +110,22 @@ def dijkstra(graph, start):
                 heapq.heappush(priority_queue, (distance, neighbor))
     return distances
 
+
+# Аналіз основних характеристик графу
+num_nodes = metro_graph.number_of_nodes()
+num_edges = metro_graph.number_of_edges()
+average_degree = sum(dict(metro_graph.degree()).values()) / num_nodes
+
+print(f"Кількість вершин: {num_nodes}")
+print(f"Кількість ребер: {num_edges}")
+print(f"Середній ступінь вершини: {average_degree:.2f}")
+
+# Ступінь кожної вершини
+print("\nСтупінь кожної вершини:")
+for node, degree in metro_graph.degree():
+    print(f"{node}: {degree}")
+
+
 # Приклад використання DFS і BFS
 start_station = "Академмістечко"
 goal_station = "Либідська"
